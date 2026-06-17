@@ -1,0 +1,1094 @@
+{
+  "players": {
+    "TRUTH-2522": {
+      "id": "TRUTH-2522",
+      "username": "Player-2522",
+      "avatar": "🐸",
+      "gamesPlayed": 13,
+      "wins": 4,
+      "losses": 9,
+      "truthCompleted": 2,
+      "daresCompleted": 3,
+      "winPercentage": 31,
+      "xp": 265,
+      "level": 2,
+      "currentTitle": "Rookie",
+      "activeStreak": 2,
+      "friends": [
+        "TRUTH-3513"
+      ],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781444946220",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781444946220",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781444065399",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781444065399",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781443851528",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781442731292",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781442026202",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781442026202",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781439835019",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781439835019",
+          "opponentId": "TRUTH-3513",
+          "opponentName": "Player-3513",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ]
+    },
+    "TRUTH-3513": {
+      "id": "TRUTH-3513",
+      "username": "Player-3513",
+      "avatar": "🐮",
+      "gamesPlayed": 13,
+      "wins": 9,
+      "losses": 4,
+      "truthCompleted": 0,
+      "daresCompleted": 2,
+      "winPercentage": 69,
+      "xp": 295,
+      "level": 2,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [
+        "TRUTH-2522"
+      ],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781444946220",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781444946220",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781444065399",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781444065399",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781443851528",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781442731292",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781442026202",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781442026202",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781439835019",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781439835019",
+          "opponentId": "TRUTH-2522",
+          "opponentName": "Player-2522",
+          "date": "6/14/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win",
+        "On Fire"
+      ]
+    },
+    "TRUTH-6548": {
+      "id": "TRUTH-6548",
+      "username": "Player-6548",
+      "avatar": "🦆",
+      "gamesPlayed": 3,
+      "wins": 1,
+      "losses": 2,
+      "truthCompleted": 0,
+      "daresCompleted": 9,
+      "winPercentage": 33,
+      "xp": 180,
+      "level": 2,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781519599208",
+          "opponentId": "TRUTH-1106",
+          "opponentName": "Player-1106",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781519599208",
+          "opponentId": "TRUTH-1106",
+          "opponentName": "Player-1106",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781519599208",
+          "opponentId": "TRUTH-1106",
+          "opponentName": "Player-1106",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win",
+        "Dare Devil"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-1106": {
+      "id": "TRUTH-1106",
+      "username": "Player-1106",
+      "avatar": "🐨",
+      "gamesPlayed": 3,
+      "wins": 2,
+      "losses": 1,
+      "truthCompleted": 1,
+      "daresCompleted": 0,
+      "winPercentage": 67,
+      "xp": 75,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 2,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781519599208",
+          "opponentId": "TRUTH-6548",
+          "opponentName": "Player-6548",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781519599208",
+          "opponentId": "TRUTH-6548",
+          "opponentName": "Player-6548",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781519599208",
+          "opponentId": "TRUTH-6548",
+          "opponentName": "Player-6548",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-7962": {
+      "id": "TRUTH-7962",
+      "username": "Player-7962",
+      "avatar": "🐮",
+      "gamesPlayed": 2,
+      "wins": 0,
+      "losses": 2,
+      "truthCompleted": 1,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 35,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781520837128",
+          "opponentId": "TRUTH-5463",
+          "opponentName": "Player-5463",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781520837128",
+          "opponentId": "TRUTH-5463",
+          "opponentName": "Player-5463",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-5463": {
+      "id": "TRUTH-5463",
+      "username": "Player-5463",
+      "avatar": "🎨",
+      "gamesPlayed": 2,
+      "wins": 2,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 50,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 2,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781520837128",
+          "opponentId": "TRUTH-7962",
+          "opponentName": "Player-7962",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781520837128",
+          "opponentId": "TRUTH-7962",
+          "opponentName": "Player-7962",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-3717": {
+      "id": "TRUTH-3717",
+      "username": "Player-3717",
+      "avatar": "🐧",
+      "gamesPlayed": 5,
+      "wins": 5,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 125,
+      "level": 2,
+      "currentTitle": "Rookie",
+      "activeStreak": 5,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-1198",
+          "opponentName": "Player-1198",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-1198",
+          "opponentName": "Player-1198",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-1198",
+          "opponentName": "Player-1198",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-1198",
+          "opponentName": "Player-1198",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-1198",
+          "opponentName": "Player-1198",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win",
+        "On Fire"
+      ],
+      "rank": "🥈 Silver"
+    },
+    "TRUTH-1198": {
+      "id": "TRUTH-1198",
+      "username": "Player-1198",
+      "avatar": "🦉",
+      "gamesPlayed": 5,
+      "wins": 0,
+      "losses": 5,
+      "truthCompleted": 2,
+      "daresCompleted": 1,
+      "winPercentage": 0,
+      "xp": 95,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-3717",
+          "opponentName": "Player-3717",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-3717",
+          "opponentName": "Player-3717",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-3717",
+          "opponentName": "Player-3717",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-3717",
+          "opponentName": "Player-3717",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781522542697",
+          "opponentId": "TRUTH-3717",
+          "opponentName": "Player-3717",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-5906": {
+      "id": "TRUTH-5906",
+      "username": "Player-5906",
+      "avatar": "🐼",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-1319": {
+      "id": "TRUTH-1319",
+      "username": "Player-1319",
+      "avatar": "🦆",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-1851": {
+      "id": "TRUTH-1851",
+      "username": "Player-1851",
+      "avatar": "🐱",
+      "gamesPlayed": 2,
+      "wins": 1,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 50,
+      "xp": 35,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781530746508",
+          "opponentId": "TRUTH-7966",
+          "opponentName": "Player-7966",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781530746508",
+          "opponentId": "TRUTH-7966",
+          "opponentName": "Player-7966",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-7966": {
+      "id": "TRUTH-7966",
+      "username": "Player-7966",
+      "avatar": "🐼",
+      "gamesPlayed": 2,
+      "wins": 1,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 50,
+      "xp": 35,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781530746508",
+          "opponentId": "TRUTH-1851",
+          "opponentName": "Player-1851",
+          "date": "6/15/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781530746508",
+          "opponentId": "TRUTH-1851",
+          "opponentName": "Player-1851",
+          "date": "6/15/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-3903": {
+      "id": "TRUTH-3903",
+      "username": "Player-3903",
+      "avatar": "🐵",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-6468": {
+      "id": "TRUTH-6468",
+      "username": "Player-6468",
+      "avatar": "🐱",
+      "gamesPlayed": 2,
+      "wins": 1,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 50,
+      "xp": 35,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781607024304",
+          "opponentId": "TRUTH-5584",
+          "opponentName": "Player-5584",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781607024304",
+          "opponentId": "TRUTH-5584",
+          "opponentName": "Player-5584",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-5584": {
+      "id": "TRUTH-5584",
+      "username": "Player-5584",
+      "avatar": "🦉",
+      "gamesPlayed": 2,
+      "wins": 1,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 50,
+      "xp": 35,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781607024304",
+          "opponentId": "TRUTH-6468",
+          "opponentName": "Player-6468",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781607024304",
+          "opponentId": "TRUTH-6468",
+          "opponentName": "Player-6468",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-4839": {
+      "id": "TRUTH-4839",
+      "username": "Player-4839",
+      "avatar": "🐶",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781608141179",
+          "opponentId": "TRUTH-9420",
+          "opponentName": "Player-9420",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-9420": {
+      "id": "TRUTH-9420",
+      "username": "Player-9420",
+      "avatar": "🦖",
+      "gamesPlayed": 1,
+      "wins": 0,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 10,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781608141179",
+          "opponentId": "TRUTH-4839",
+          "opponentName": "Player-4839",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-1448": {
+      "id": "TRUTH-1448",
+      "username": "Player-1448",
+      "avatar": "🐮",
+      "gamesPlayed": 1,
+      "wins": 0,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 10,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781609110405",
+          "opponentId": "TRUTH-7849",
+          "opponentName": "Player-7849",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-7849": {
+      "id": "TRUTH-7849",
+      "username": "Player-7849",
+      "avatar": "🐶",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781609110405",
+          "opponentId": "TRUTH-1448",
+          "opponentName": "Player-1448",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-7545": {
+      "id": "TRUTH-7545",
+      "username": "Player-7545",
+      "avatar": "🐼",
+      "gamesPlayed": 1,
+      "wins": 0,
+      "losses": 1,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 10,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781610182397",
+          "opponentId": "TRUTH-1147",
+          "opponentName": "Player-1147",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-1147": {
+      "id": "TRUTH-1147",
+      "username": "Player-1147",
+      "avatar": "🦊",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781610182397",
+          "opponentId": "TRUTH-7545",
+          "opponentName": "Player-7545",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-4010": {
+      "id": "TRUTH-4010",
+      "username": "Player-4010",
+      "avatar": "🐙",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-2729": {
+      "id": "TRUTH-2729",
+      "username": "Player-2729",
+      "avatar": "🦊",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-3452": {
+      "id": "TRUTH-3452",
+      "username": "Player-3452",
+      "avatar": "🐙",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781612829122",
+          "opponentId": "TRUTH-4018",
+          "opponentName": "Player-4018",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-4018": {
+      "id": "TRUTH-4018",
+      "username": "Player-4018",
+      "avatar": "🐮",
+      "gamesPlayed": 2,
+      "wins": 0,
+      "losses": 2,
+      "truthCompleted": 1,
+      "daresCompleted": 1,
+      "winPercentage": 0,
+      "xp": 50,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781613215693",
+          "opponentId": "TRUTH-9300",
+          "opponentName": "Player-9300",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        },
+        {
+          "matchId": "room-private-1781612829122",
+          "opponentId": "TRUTH-3452",
+          "opponentName": "Player-3452",
+          "date": "6/16/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-9300": {
+      "id": "TRUTH-9300",
+      "username": "Player-9300",
+      "avatar": "🐝",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-private-1781613215693",
+          "opponentId": "TRUTH-4018",
+          "opponentName": "Player-4018",
+          "date": "6/16/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-2811": {
+      "id": "TRUTH-2811",
+      "username": "Player-2811",
+      "avatar": "🦆",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-3275": {
+      "id": "TRUTH-3275",
+      "username": "Player-3275",
+      "avatar": "🎨",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-7700": {
+      "id": "TRUTH-7700",
+      "username": "Player-7700",
+      "avatar": "🦉",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-2683": {
+      "id": "TRUTH-2683",
+      "username": "Player-2683",
+      "avatar": "🐱",
+      "gamesPlayed": 0,
+      "wins": 0,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 0,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    }
+  }
+}

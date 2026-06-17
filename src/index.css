@@ -1,0 +1,1407 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --sky-blue: #7DB7FF;
+  --powder-blue: #A8D1FF;
+  --mint-green: #A7E8C5;
+  --peach: #FFC8A2;
+  --butter-yellow: #FFE38A;
+  --lavender: #CBB6FF;
+  --coral-pink: #FFAAA5;
+  --teal: #8FE3D4;
+  --off-white: #F9F8F5;
+  --cream: #FFF7E8;
+  
+  --success: #52D681;
+  --warning: #FFA048;
+  --error: #FF6F59;
+  
+  --dark-charcoal: #4A4640;
+  
+  font-family: 'Fredoka', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--dark-charcoal);
+  background-color: var(--off-white);
+  overflow-x: hidden;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--off-white);
+  background-image: radial-gradient(var(--cream) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Crayon Sketchy SVG Filter */
+.crayon-texture {
+  filter: url(#crayon-filter);
+}
+
+@media (max-width: 1199px) {
+  /* Disable filters inside the game grid on mobile to keep 60 FPS performance */
+  .game-grid, .game-grid * {
+    filter: none !important;
+  }
+}
+
+/* Typography wrapping rules */
+h1, h2, h3, h4, h5, h6, span, p, div {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive flex wrapper for card groups */
+.responsive-card-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .responsive-card-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* Handdrawn Crayon Border Effect */
+.crayon-border {
+  border: 4px solid var(--dark-charcoal);
+  border-radius: 255px 25px 225px 35px/35px 225px 25px 255px;
+}
+
+.crayon-border-thin {
+  border: 2px dashed var(--dark-charcoal);
+  border-radius: 120px 15px 100px 10px/10px 100px 15px 120px;
+}
+
+/* Crayon Card Layout */
+.crayon-card {
+  background-color: #ffffff;
+  border: 4px solid var(--dark-charcoal);
+  border-radius: 255px 15px 225px 20px/20px 225px 15px 255px;
+  box-shadow: 4px 6px 0px rgba(74, 70, 64, 0.15);
+  padding: clamp(12px, 3vw, 24px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.crayon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 8px 0px rgba(74, 70, 64, 0.18);
+}
+
+/* Crayon Playful Buttons */
+.crayon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-charcoal);
+  background-color: #ffffff;
+  border: 3px solid var(--dark-charcoal);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  cursor: pointer;
+  box-shadow: 3px 4px 0px var(--dark-charcoal);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+}
+
+.crayon-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 5px 0px var(--dark-charcoal);
+}
+
+.crayon-btn:active {
+  transform: translate(2px, 3px);
+  box-shadow: 1px 1px 0px var(--dark-charcoal);
+}
+
+.crayon-btn:disabled {
+  background-color: #e0e0e0;
+  border-color: #9e9e9e;
+  box-shadow: 2px 2px 0px #9e9e9e;
+  color: #757575;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Button Colors */
+.crayon-btn-primary {
+  background-color: var(--sky-blue);
+}
+.crayon-btn-secondary {
+  background-color: var(--peach);
+}
+.crayon-btn-success {
+  background-color: var(--mint-green);
+}
+.crayon-btn-warning {
+  background-color: var(--butter-yellow);
+}
+.crayon-btn-error {
+  background-color: var(--coral-pink);
+}
+.crayon-btn-lavender {
+  background-color: var(--lavender);
+}
+.crayon-btn-teal {
+  background-color: var(--teal);
+}
+
+/* Form Inputs */
+.crayon-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--dark-charcoal);
+  background-color: #ffffff;
+  border: 3px solid var(--dark-charcoal);
+  border-radius: 15px 255px 12px 255px/255px 12px 255px 15px;
+  outline: none;
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.crayon-input:focus {
+  border-color: var(--sky-blue);
+}
+
+/* Chat bubble styling */
+.chat-bubble {
+  max-width: 75%;
+  padding: 0.6rem 0.9rem;
+  border: 3px solid var(--dark-charcoal);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  position: relative;
+}
+
+.chat-bubble.sent {
+  background-color: var(--powder-blue);
+  border-radius: 20px 20px 5px 20px/20px 20px 5px 20px;
+  align-self: flex-end;
+}
+
+.chat-bubble.received {
+  background-color: #ffffff;
+  border-radius: 20px 20px 20px 5px/20px 20px 20px 5px;
+  align-self: flex-start;
+}
+
+/* Floating Animations */
+@keyframes float-doodle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(15px, -15px) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.floating-doodle {
+  animation: float-doodle 10s ease-in-out infinite;
+  opacity: 0.15;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes pulse-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.pulse-bounce {
+  animation: pulse-bounce 1s ease-in-out infinite;
+}
+
+/* Grid layout rules */
+.home-container {
+  max-width: 600px;
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+  position: relative;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.game-logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--dark-charcoal);
+  text-shadow: 2px 3px 0px var(--butter-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-sub {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--mint-green);
+  padding: 0.2rem 1rem;
+  border: 2px solid var(--dark-charcoal);
+  border-radius: 50px;
+  transform: rotate(-2deg);
+  margin-top: -0.5rem;
+}
+
+/* Floating RPS Animations in Menu */
+.floating-hand {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: opacity(0.3) drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+  animation: float-doodle 6s ease-in-out infinite;
+}
+
+.floating-hand.rock {
+  top: 15%;
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.floating-hand.paper {
+  top: 45%;
+  right: 8%;
+  animation-delay: 1.5s;
+}
+
+.floating-hand.scissors {
+  bottom: 15%;
+  left: 12%;
+  animation-delay: 3s;
+}
+
+/* Grid elements */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.menu-grid-full {
+  grid-column: span 2;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(74, 70, 64, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  max-width: 500px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Achievements badge display */
+.achievement-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  border: 2px solid var(--dark-charcoal);
+  border-radius: 15px;
+  background-color: var(--cream);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.achievement-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--powder-blue);
+  border: 2px solid var(--off-white);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sky-blue);
+}
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-chat-close-btn {
+  display: none;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Game Arena Grid & Views */
+.game-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 95%;
+  margin: 1rem auto;
+  height: calc(100vh - 4rem);
+}
+
+@media (max-width: 1199px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+    height: auto !important;
+    min-height: 88dvh !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* Active gameplay card (phase !== 'lobby') */
+  .game-grid > .crayon-card {
+    order: 2 !important;
+    height: auto !important;
+    min-height: 75vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 0.8rem !important;
+    overflow: visible !important;
+    gap: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Pre-game lobby card (phase === 'lobby') - MUST be compact and match reference screenshot */
+  .game-grid > .crayon-card.lobby-phase {
+    order: 2 !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0.8rem !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+    gap: 0.4rem !important;
+  }
+
+  /* Hide chat panel completely under all circumstances on mobile viewports */
+  .chat-panel,
+  .chat-panel.hide-on-mobile-play,
+  .chat-panel.mobile-expanded,
+  .chat-panel.hide-on-mobile-play.mobile-expanded {
+    display: none !important;
+  }
+
+  /* Pre-game lobby inner layout matching the reference screenshot exactly */
+  .game-grid > .crayon-card.lobby-phase > div:first-of-type {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 0.6rem !important;
+    flex: unset !important;
+  }
+  
+  .game-grid > .crayon-card.lobby-phase .mobile-game-area {
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0.2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.3rem !important;
+  }
+  .game-grid > .crayon-card.lobby-phase .mobile-game-area h2 {
+    font-size: 1.4rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .game-grid > .crayon-card.lobby-phase .mobile-game-area p {
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  .game-grid > .crayon-card.lobby-phase .mobile-choices-area {
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0.2rem 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.3rem !important;
+  }
+  .game-grid > .crayon-card.lobby-phase .mobile-choices-area label {
+    font-size: 0.85rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .game-grid > .crayon-card.lobby-phase .countdown-options {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .game-grid > .crayon-card.lobby-phase .countdown-options button {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.8rem !important;
+    min-width: 80px !important;
+    height: auto !important;
+  }
+
+  .game-grid > .crayon-card.lobby-phase .mobile-actions-area {
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0.4rem 0 0 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically! */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  .game-grid > .crayon-card.lobby-phase .mobile-actions-area button {
+    width: 100% !important;
+    max-width: 220px !important;
+    height: 38px !important;
+    padding: 0.3rem !important;
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  #phaser-game-parent {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16/10 !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-grid-full {
+    grid-column: span 1;
+  }
+}
+
+
+
+/* Countdown visuals */
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cream);
+  height: 100%;
+}
+
+.countdown-number {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--tomato);
+  animation: bounce-pulse 1s ease-in-out infinite;
+}
+
+@keyframes bounce-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+}
+
+/* Crayon card animation selection */
+.choice-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.choice-card {
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 140px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.choice-card.selected {
+  border-color: var(--sky-blue);
+  background-color: var(--powder-blue);
+}
+
+.choice-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Leaderboard/stats list style */
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stats-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 2px dashed #e0e0e0;
+}
+
+/* Sparkles victory animation overlay */
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--butter-yellow);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkle-shoot 1s forwards;
+}
+
+@keyframes sparkle-shoot {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Pop-up notification slide & bounce-in from right side */
+@keyframes bounce-in {
+  0% {
+    transform: translateX(120%) scale(0.9);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-15px) scale(1.02);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile Floating Chat Styles */
+.mobile-chat-trigger-container {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .mobile-chat-trigger-container {
+    display: block !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 140 !important;
+  }
+}
+
+.mobile-chat-trigger-btn {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 4px 4px 0px var(--dark-charcoal) !important;
+  position: relative !important;
+  padding: 0 !important;
+  background-color: var(--sky-blue) !important;
+  border: 3px solid var(--dark-charcoal) !important;
+  cursor: pointer !important;
+  transition: transform 0.2s;
+}
+
+.mobile-chat-trigger-btn:hover {
+  transform: scale(1.05) !important;
+}
+
+.mobile-chat-trigger-btn:active {
+  transform: scale(0.95) !important;
+}
+
+.mobile-chat-red-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background-color: var(--error);
+  border: 2px solid var(--dark-charcoal);
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1199px) {
+  .mobile-chat-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(74, 70, 64, 0.45);
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .mobile-chat-drawer-content {
+    background-color: #ffffff;
+    width: 100%;
+    height: 380px !important;
+    max-height: 50vh !important;
+    border-top: 4px solid var(--dark-charcoal);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0 !important;
+    padding: 1.2rem;
+    box-shadow: 0px -4px 12px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .mobile-chat-drawer-content .chat-messages {
+    flex: 1 !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+  }
+
+  .animate-slide-up {
+    animation: slide-up-drawer 0.25s ease-out forwards;
+  }
+
+  /* Responsive Rock Paper Scissors choice cards on mobile */
+  .choice-card-container {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 4% !important;
+    margin: 0.4rem 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .choice-card {
+    width: 30% !important;
+    height: 110px !important;
+    padding: 0.4rem 0.2rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    border: 4px solid var(--dark-charcoal) !important;
+    border-radius: 255px 15px 225px 20px/20px 225px 15px 255px !important;
+    box-shadow: 4px 6px 0px rgba(74, 70, 64, 0.15) !important;
+    box-sizing: border-box !important;
+  }
+
+  .choice-emoji {
+    font-size: 1.8rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  @keyframes slide-up-drawer {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Redesign Mobile Viewport layout */
+  .game-grid {
+    height: auto !important;
+    min-height: calc(100vh - 65px) !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .game-grid > .crayon-card {
+    height: auto !important;
+    min-height: 75vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 0.8rem !important;
+    overflow: visible !important;
+    gap: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-game-area {
+    height: auto !important;
+    min-height: 30% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: visible !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.2rem !important;
+  }
+
+  .mobile-choices-area {
+    height: auto !important;
+    min-height: 35% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: visible !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.2rem !important;
+  }
+
+  .mobile-actions-area {
+    height: auto !important;
+    min-height: 20% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.2rem !important;
+  }
+
+  /* Specific element tuning for mobile */
+  .countdown-box {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .countdown-number {
+    font-size: 4.5rem !important;
+  }
+
+  /* Make sure VS screen and matchup cards are compact */
+  .responsive-card-group {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0.2rem 0 !important;
+    width: 100% !important;
+  }
+  
+  .responsive-card-group .crayon-border-thin {
+    width: 95px !important;
+    padding: 0.4rem !important;
+  }
+  
+  .responsive-card-group .crayon-border-thin div {
+    font-size: 2rem !important; /* smaller avatar */
+  }
+  
+  .responsive-card-group span {
+    font-size: 1.2rem !important; /* smaller VS */
+  }
+
+  /* Very small mobile screen overrides */
+  @media (max-width: 480px) {
+    .responsive-card-group {
+      flex-direction: column !important;
+      gap: 12px !important;
+    }
+    .responsive-card-group button,
+    .responsive-card-group .crayon-border-thin {
+      width: 100% !important;
+      max-width: 200px !important;
+      height: auto !important;
+      min-height: 80px !important;
+      box-sizing: border-box !important;
+    }
+  }
+}
+
+/* Global Header Styling */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 5;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.desktop-header-logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo-container {
+  display: none;
+}
+
+.header-logo {
+  font-size: 1.8rem;
+}
+
+.game-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.header-mute-btn {
+  padding: 0.4rem;
+  min-width: 40px;
+}
+
+.header-level-box {
+  padding: 0.3rem 0.8rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-level-avatar {
+  font-size: 1.2rem;
+}
+
+.header-level-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Desktop Profile Card */
+.home-profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border: 4px solid var(--dark-charcoal);
+  border-radius: 255px 15px 225px 20px/20px 225px 15px 255px;
+  box-shadow: 4px 6px 0px rgba(74, 70, 64, 0.15);
+  box-sizing: border-box;
+}
+
+.profile-card-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-card-avatar {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+}
+
+.profile-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-username {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.profile-card-id {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.profile-card-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.profile-badge {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-title {
+  background-color: #FFE38A;
+}
+
+.badge-streak {
+  background-color: #A7E8C5;
+}
+
+.badge-rank {
+  background-color: #FFAAA5;
+  font-weight: 700;
+}
+
+.profile-card-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.profile-card-record {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.profile-card-winrate {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Desktop Logo Container */
+.logo-container {
+  text-align: center;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Compact Players Row */
+.mobile-players-row {
+  display: none;
+}
+
+/* Global Countdown Options centering */
+.countdown-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chat-mobile-avatar {
+  display: none;
+}
+
+/* Mobile Media Queries for width <= 768px */
+@media (max-width: 1199px) {
+  .home-container {
+    height: 83dvh !important;
+    max-height: 83dvh !important;
+    margin: 0 auto !important;
+    padding: 0.5rem 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Header mobile styling overrides */
+  .game-header {
+    height: 12dvh !important;
+    max-height: 12dvh !important;
+    padding: 0.25rem 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    background-color: var(--off-white) !important;
+    border-bottom: 2px dashed #ccc !important;
+  }
+  .desktop-header-logo-title {
+    display: none !important;
+  }
+  .logo-container {
+    display: none !important;
+  }
+  .header-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 2px !important;
+  }
+  .header-logo-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    margin-top: 4px !important;
+  }
+  .header-logo-text {
+    font-family: 'Fredoka', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(1.4rem, 4.5vw, 1.8rem) !important;
+    color: var(--dark-charcoal) !important;
+    text-shadow: 2px 3px 0px var(--butter-yellow) !important;
+    line-height: 1.0 !important;
+  }
+  .header-logo-pill {
+    font-family: 'Fredoka', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: clamp(0.75rem, 2.2vw, 0.9rem) !important;
+    background-color: var(--mint-green) !important;
+    color: var(--dark-charcoal) !important;
+    padding: 0.1rem 0.5rem !important;
+    border: 2px solid var(--dark-charcoal) !important;
+    border-radius: 50px !important;
+    transform: rotate(-2deg) !important;
+    display: inline-block !important;
+    margin-top: 2px !important;
+  }
+  .header-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+  .header-level-box {
+    padding: 0.2rem 0.4rem !important;
+    gap: 0.25rem !important;
+    border: 2px dashed var(--dark-charcoal) !important;
+    border-radius: 120px 15px 100px 10px/10px 100px 15px 120px !important;
+  }
+  .header-level-avatar {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem) !important;
+  }
+  .header-level-text {
+    font-size: clamp(0.7rem, 2vw, 0.8rem) !important;
+  }
+  .header-mute-btn {
+    padding: 0.25rem !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    border: 2px solid var(--dark-charcoal) !important;
+    border-radius: 120px 15px 100px 10px/10px 100px 15px 120px !important;
+  }
+
+  /* Profile Card mobile styling overrides */
+  .home-profile-card {
+    height: 15dvh !important;
+    max-height: 15dvh !important;
+    padding: 0.4rem 0.6rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border: 4px solid var(--dark-charcoal) !important;
+    border-radius: 255px 15px 225px 20px/20px 225px 15px 255px !important;
+    box-shadow: 4px 6px 0px rgba(74, 70, 64, 0.15) !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+  .profile-card-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    overflow: hidden !important;
+  }
+  .profile-card-avatar {
+    font-size: clamp(2.2rem, 8.5vw, 2.8rem) !important;
+  }
+  .profile-card-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1px !important;
+    overflow: hidden !important;
+  }
+  .profile-card-username {
+    font-size: clamp(1rem, 3.2vw, 1.25rem) !important;
+    font-weight: 700 !important;
+  }
+  .profile-card-id {
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem) !important;
+  }
+  .profile-card-badges {
+    display: flex !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+    margin-top: 1px !important;
+  }
+  .profile-badge {
+    padding: 0.1rem 0.3rem !important;
+    font-size: clamp(0.6rem, 1.6vw, 0.7rem) !important;
+    border: 2px solid var(--dark-charcoal) !important;
+    border-radius: 6px 4px 6px 4px/4px 6px 4px 6px !important;
+    font-weight: 600 !important;
+  }
+  .profile-card-right {
+    text-align: right !important;
+  }
+  .profile-card-record {
+    font-size: clamp(1.1rem, 3vw, 1.35rem) !important;
+  }
+  .profile-card-winrate {
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem) !important;
+  }
+
+  /* Main Action Area menu overrides */
+  .menu-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(6, 1fr) !important;
+    gap: clamp(8px, 1.2vh, 12px) !important;
+    height: 45dvh !important;
+    max-height: 45dvh !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .menu-grid button {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 60px !important;
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem) !important;
+    padding: 0.4rem 0.8rem !important;
+    border: 3px solid var(--dark-charcoal) !important;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
+    box-shadow: 3px 4px 0px var(--dark-charcoal) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Footer overrides */
+  .game-footer {
+    height: 5dvh !important;
+    max-height: 5dvh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: clamp(0.65rem, 1.8vw, 0.75rem) !important;
+    border-top: 2px dashed #ccc !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #777 !important;
+    z-index: 5 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Compact Players Row for Mobile */
+  .mobile-players-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    padding: 0.3rem 0.6rem !important;
+    background-color: var(--cream) !important;
+    border: 2px solid var(--dark-charcoal) !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    margin: 0 auto 0.25rem auto !important;
+  }
+  .mobile-player-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+  }
+  .mobile-player-avatar {
+    font-size: clamp(1.1rem, 3.2vw, 1.4rem) !important;
+  }
+  .mobile-player-info {
+    font-weight: 600 !important;
+    font-size: clamp(0.75rem, 2vw, 0.85rem) !important;
+  }
+  .mobile-player-ready {
+    color: green !important;
+    font-weight: 700 !important;
+    font-size: clamp(0.75rem, 2vw, 0.85rem) !important;
+  }
+  .mobile-vs-divider {
+    font-weight: 700 !important;
+    color: var(--coral-pink) !important;
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem) !important;
+  }
+
+  /* Hide the card-based matchup UI on mobile lobby to save height */
+  .mobile-game-area .responsive-card-group {
+    display: none !important;
+  }
+
+  /* Stack option choices vertically for truth/dare select modal */
+  .mobile-choices-area .responsive-card-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    align-items: center !important;
+  }
+
+  /* Mobile chat trigger button remains visible */
+  
+  /* Chat bubble styling for compact mobile display */
+  .chat-sender-name {
+    display: none !important;
+  }
+  .chat-timestamp {
+    display: none !important;
+  }
+  .chat-mobile-avatar {
+    display: inline-block !important;
+    margin-right: 0.25rem;
+    font-size: 1.1rem;
+  }
+  .chat-bubble {
+    padding: 0.25rem 0.5rem !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+    max-width: 90% !important;
+    font-size: 0.85rem !important;
+    box-shadow: none !important;
+    border: 1px solid var(--dark-charcoal) !important;
+  }
+
+  /* RPS Choices container layout row format */
+  .choice-card-container {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 4% !important;
+    margin: 0.4rem 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .choice-card {
+    width: 30% !important;
+    height: 110px !important;
+    padding: 0.4rem 0.2rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    border: 4px solid var(--dark-charcoal) !important;
+    border-radius: 255px 15px 225px 20px/20px 225px 15px 255px !important;
+    box-shadow: 4px 6px 0px rgba(74, 70, 64, 0.15) !important;
+    box-sizing: border-box !important;
+  }
+  .choice-emoji {
+    font-size: clamp(1.8rem, 6vw, 2.4rem) !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Global classes for non-mobile fallback */
+.mobile-game-area, .mobile-choices-area, .mobile-actions-area {
+  box-sizing: border-box;
+}
