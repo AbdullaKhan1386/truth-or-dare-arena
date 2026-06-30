@@ -1089,6 +1089,64 @@
       "matchHistory": [],
       "achievements": [],
       "rank": "🥉 Bronze"
+    },
+    "TRUTH-9463": {
+      "id": "TRUTH-9463",
+      "username": "Player-9463",
+      "avatar": "🐼",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-match-1782804056590-sygoe",
+          "opponentId": "TRUTH-9559",
+          "opponentName": "Player-9559",
+          "date": "6/30/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-9559": {
+      "id": "TRUTH-9559",
+      "username": "Player-9559",
+      "avatar": "🎨",
+      "gamesPlayed": 1,
+      "wins": 0,
+      "losses": 1,
+      "truthCompleted": 1,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-match-1782804056590-sygoe",
+          "opponentId": "TRUTH-9463",
+          "opponentName": "Player-9463",
+          "date": "6/30/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
     }
   }
 }

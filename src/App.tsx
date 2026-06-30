@@ -145,6 +145,7 @@ export default function App() {
   const [chatInput, setChatInput] = useState('');
   const [isMobileChatOpen, setIsMobileChatOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
+  const [challengeTimer, setChallengeTimer] = useState<number | null>(null);
   const isMobileChatOpenRef = useRef(false);
 
   const [isMobileView, setIsMobileView] = useState(() => window.innerWidth < 1200);
@@ -582,6 +583,52 @@ export default function App() {
       return () => clearTimeout(timer);
     }
   }, [countdownNum, muted]);
+
+  // Initialize and clean up challenge timer for Truth/Dare input
+  useEffect(() => {
+    if (
+      currentRoom &&
+      currentRoom.phase === 'truth-dare-input' &&
+      profile &&
+      currentRoom.winnerId === profile.id &&
+      !currentRoom.actionPrompt
+    ) {
+      if (challengeTimer === null) {
+        setChallengeTimer(60);
+      }
+    } else {
+      if (challengeTimer !== null) {
+        setChallengeTimer(null);
+      }
+    }
+  }, [currentRoom?.phase, currentRoom?.actionPrompt, currentRoom?.winnerId, profile?.id, challengeTimer]);
+
+  // Tick the challenge timer
+  useEffect(() => {
+    if (challengeTimer === null) return;
+
+    if (challengeTimer > 0) {
+      const timer = setTimeout(() => {
+        setChallengeTimer(prev => (prev !== null ? prev - 1 : null));
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (challengeTimer === 0) {
+      if (socketRef.current && currentRoom && profile) {
+        const expiredPrompt = "Time Expired";
+        setCurrentRoom(prev => {
+          if (!prev) return null;
+          return {
+            ...prev,
+            actionPrompt: expiredPrompt
+          };
+        });
+        socketRef.current.emit('submit-prompt', {
+          roomId: currentRoom.id,
+          prompt: expiredPrompt
+        });
+      }
+    }
+  }, [challengeTimer, currentRoom, profile]);
 
   // Click Sound Handler
   const handleButtonClick = () => {
@@ -1191,39 +1238,47 @@ export default function App() {
               TRUTH OR DARE
               <span className="logo-sub">ARENA</span>
             </h1>
-            <p style={{ marginTop: '0.8rem', color: '#6A6660', fontSize: '0.95rem' }}>
-              Rock-Paper-Scissors clash. Winner challenges the loser!
+            <p style={{ marginTop: '0.8rem', color: '#4A4640', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '0.05em' }}>
+              Created by Slappy / Pathan.
             </p>
           </div>
 
-          {/* Active players count */}
-          <div className="online-count-badge">
-            🟢 {onlineCount} players active online
-          </div>
+          {isMobileView && (
+            <div className="mobile-creator-credit" style={{ textAlign: 'left', color: '#4A4640', fontSize: '0.85rem', fontWeight: '700', margin: '0.2rem 0 0.5rem 0' }}>
+              Created by Slappy / Pathan.
+            </div>
+          )}
 
-          {/* Quick Stats Panel */}
-          <div className="home-profile-card crayon-card">
-            <div className="profile-card-left">
-              <div className="profile-card-avatar">{profile.avatar}</div>
-              <div className="profile-card-info">
-                <h2 className="profile-card-username">{profile.username}</h2>
-                <p className="profile-card-id">ID: {profile.id}</p>
-                <div className="profile-card-badges">
-                  <span className="profile-badge badge-title">
-                    🏆 {profile.currentTitle}
-                  </span>
-                  <span className="profile-badge badge-streak">
-                    🔥 Streak: {profile.activeStreak}
-                  </span>
-                  <span className="profile-badge badge-rank">
-                    Rank: {profile.rank || '🥉 Bronze'}
-                  </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', width: '100%' }}>
+            {/* Active players count */}
+            <div className="online-count-badge" style={{ textAlign: 'center', fontSize: '0.9rem', color: '#6A6660', fontWeight: '400' }}>
+              🟢 {onlineCount} players active online
+            </div>
+
+            {/* Quick Stats Panel */}
+            <div className="home-profile-card crayon-card">
+              <div className="profile-card-left">
+                <div className="profile-card-avatar">{profile.avatar}</div>
+                <div className="profile-card-info">
+                  <h2 className="profile-card-username">{profile.username}</h2>
+                  <p className="profile-card-id">ID: {profile.id}</p>
+                  <div className="profile-card-badges">
+                    <span className="profile-badge badge-title">
+                      🏆 {profile.currentTitle}
+                    </span>
+                    <span className="profile-badge badge-streak">
+                      🔥 Streak: {profile.activeStreak}
+                    </span>
+                    <span className="profile-badge badge-rank">
+                      Rank: {profile.rank || '🥉 Bronze'}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="profile-card-right">
-              <div className="profile-card-record">{profile.wins}W - {profile.losses}L</div>
-              <div className="profile-card-winrate">Win Rate: {profile.winPercentage}%</div>
+              <div className="profile-card-right">
+                <div className="profile-card-record">{profile.wins}W - {profile.losses}L</div>
+                <div className="profile-card-winrate">Win Rate: {profile.winPercentage}%</div>
+              </div>
             </div>
           </div>
 
@@ -1689,6 +1744,16 @@ export default function App() {
                             Write a {currentRoom.selectedAction} challenge for your opponent:
                           </h3>
                         </div>
+
+                        {challengeTimer !== null && (
+                          <div className="countdown-box" style={{ background: 'none', height: 'auto', marginBottom: '0.5rem' }}>
+                            <div style={{ fontSize: '0.9rem', fontWeight: '600', color: '#6A6660' }}>Time Remaining</div>
+                            <div className="countdown-number" style={{ fontSize: '2.5rem', animation: 'none', color: '#FF6F59' }}>
+                              {challengeTimer}
+                            </div>
+                          </div>
+                        )}
+
                         <div className="mobile-choices-area">
                           <textarea 
                             className="crayon-input"
