@@ -51,7 +51,15 @@ body {
 }
 
 /* Crayon Sketchy SVG Filter */
-.crayon-texture {
+.crayon-texture,
+.crayon-card,
+.crayon-border,
+.crayon-border-thin,
+.crayon-btn,
+.crayon-input,
+.chat-bubble,
+.modal-content,
+.chat-panel {
   filter: url(#crayon-filter);
 }
 

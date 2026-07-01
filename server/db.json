@@ -1147,6 +1147,64 @@
       ],
       "achievements": [],
       "rank": "🥉 Bronze"
+    },
+    "TRUTH-1077": {
+      "id": "TRUTH-1077",
+      "username": "Player-1077",
+      "avatar": "🦄",
+      "gamesPlayed": 1,
+      "wins": 0,
+      "losses": 1,
+      "truthCompleted": 1,
+      "daresCompleted": 0,
+      "winPercentage": 0,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 0,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-match-1782885502498-vcbzg",
+          "opponentId": "TRUTH-2702",
+          "opponentName": "Player-2702",
+          "date": "7/1/2026",
+          "result": "loss",
+          "rounds": 1
+        }
+      ],
+      "achievements": [],
+      "rank": "🥉 Bronze"
+    },
+    "TRUTH-2702": {
+      "id": "TRUTH-2702",
+      "username": "Player-2702",
+      "avatar": "🦉",
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "truthCompleted": 0,
+      "daresCompleted": 0,
+      "winPercentage": 100,
+      "xp": 25,
+      "level": 1,
+      "currentTitle": "Rookie",
+      "activeStreak": 1,
+      "friends": [],
+      "matchHistory": [
+        {
+          "matchId": "room-match-1782885502498-vcbzg",
+          "opponentId": "TRUTH-1077",
+          "opponentName": "Player-1077",
+          "date": "7/1/2026",
+          "result": "win",
+          "rounds": 1
+        }
+      ],
+      "achievements": [
+        "First Win"
+      ],
+      "rank": "🥉 Bronze"
     }
   }
 }
