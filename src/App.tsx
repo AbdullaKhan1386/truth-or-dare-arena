@@ -211,6 +211,10 @@ export default function App() {
 
   useEffect(() => {
     profileRef.current = profile;
+    if (profile) {
+      localStorage.setItem('td_arena_player_profile', JSON.stringify(profile));
+      localStorage.setItem('td_arena_player_id', profile.id);
+    }
   }, [profile]);
 
   useEffect(() => {
@@ -235,9 +239,7 @@ export default function App() {
   // const [matchmakingInvite, setMatchmakingInvite] = useState<{ sender: { id: string; username: string; avatar: string; level: number } } | null>(null);
   // const [invitedPlayerId, setInvitedPlayerId] = useState<string | null>(null);
 
-  useEffect(() => {
-    profileRef.current = profile;
-  }, [profile]);
+  // Synchronized profile reference updates
 
   useEffect(() => {
     screenRef.current = screen;
@@ -271,9 +273,28 @@ export default function App() {
     // Generate/Load Guest ID
     let guestId = localStorage.getItem('td_arena_player_id');
     if (!guestId) {
+      const prefix = Math.random() < 0.5 ? 'TRUTH' : 'DARE';
       const randNum = Math.floor(1000 + Math.random() * 9000);
-      guestId = `TRUTH-${randNum}`;
+      guestId = `${prefix}-${randNum}`;
       localStorage.setItem('td_arena_player_id', guestId);
+    }
+
+    // Try loading full profile from localStorage
+    const savedProfileStr = localStorage.getItem('td_arena_player_profile');
+    let localProfile: PlayerProfile | null = null;
+    if (savedProfileStr) {
+      try {
+        localProfile = JSON.parse(savedProfileStr);
+      } catch (e) {
+        console.error('Failed to parse saved profile', e);
+      }
+    }
+
+    // Set initial local profile if we have one
+    if (localProfile) {
+      setProfile(localProfile);
+      setUsernameInput(localProfile.username);
+      setSelectedAvatar(localProfile.avatar);
     }
 
     // Connect socket
@@ -289,46 +310,65 @@ export default function App() {
       }
     });
 
-    // Load initial profile from API
-    fetch(`${socketUrl}api/profile/${guestId}`)
-      .then(res => res.json())
-      .then(data => {
-        setProfile(data);
-        setUsernameInput(data.username);
-        setSelectedAvatar(data.avatar);
-        // Login to socket
-        socket.emit('player-login', data.id);
-        setScreen('home');
+    // If we have a local profile, sync it to the server first
+    if (localProfile) {
+      fetch(`${socketUrl}api/profile/${guestId}/update`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(localProfile)
       })
-      .catch(err => {
-        console.error('Failed to load profile', err);
-        // Fallback to local profile generation if server offline
-        const fallbackProfile: PlayerProfile = {
-          id: guestId!,
-          username: `Guest-${guestId!.split('-')[1]}`,
-          avatar: '🐼',
-          gamesPlayed: 0,
-          wins: 0,
-          losses: 0,
-          truthCompleted: 0,
-          daresCompleted: 0,
-          winPercentage: 0,
-          xp: 0,
-          level: 1,
-          currentTitle: 'Rookie',
-          activeStreak: 0,
-          friends: [],
-          matchHistory: [],
-          achievements: [],
-          rank: '🥉 Bronze'
-        };
-        setProfile(fallbackProfile);
-        setUsernameInput(fallbackProfile.username);
-        setSelectedAvatar(fallbackProfile.avatar);
-        // Register to socket even on fallback
-        socket.emit('player-login', fallbackProfile.id);
-        setScreen('home');
-      });
+        .then(res => res.json())
+        .then(data => {
+          setProfile(data);
+          setUsernameInput(data.username);
+          setSelectedAvatar(data.avatar);
+          socket.emit('player-login', data.id);
+          setScreen('home');
+        })
+        .catch(err => {
+          console.warn('Profile sync failed, using cached local profile', err);
+          socket.emit('player-login', guestId);
+          setScreen('home');
+        });
+    } else {
+      // Load initial profile from API (if no local profile exists yet)
+      fetch(`${socketUrl}api/profile/${guestId}`)
+        .then(res => res.json())
+        .then(data => {
+          setProfile(data);
+          setUsernameInput(data.username);
+          setSelectedAvatar(data.avatar);
+          socket.emit('player-login', data.id);
+          setScreen('home');
+        })
+        .catch(err => {
+          console.error('Failed to load profile', err);
+          const fallbackProfile: PlayerProfile = {
+            id: guestId!,
+            username: `Player-${guestId!.split('-')[1] || '0000'}`,
+            avatar: '🐼',
+            gamesPlayed: 0,
+            wins: 0,
+            losses: 0,
+            truthCompleted: 0,
+            daresCompleted: 0,
+            winPercentage: 0,
+            xp: 0,
+            level: 1,
+            currentTitle: 'Rookie',
+            activeStreak: 0,
+            friends: [],
+            matchHistory: [],
+            achievements: [],
+            rank: '🥉 Bronze'
+          };
+          setProfile(fallbackProfile);
+          setUsernameInput(fallbackProfile.username);
+          setSelectedAvatar(fallbackProfile.avatar);
+          socket.emit('player-login', fallbackProfile.id);
+          setScreen('home');
+        });
+    }
 
     // Listeners
     socket.on('online-count', (count: number) => {
@@ -2472,7 +2512,7 @@ export default function App() {
                 <input 
                   type="text" 
                   className="crayon-input"
-                  placeholder="e.g. TRUTH-4567"
+                  placeholder="e.g. TRUTH-4567 or DARE-8910"
                   value={inviteFriendId}
                   onChange={e => setInviteFriendId(e.target.value)}
                 />

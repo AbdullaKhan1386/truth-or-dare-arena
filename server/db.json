@@ -1152,18 +1152,26 @@
       "id": "TRUTH-1077",
       "username": "Player-1077",
       "avatar": "🦄",
-      "gamesPlayed": 1,
-      "wins": 0,
+      "gamesPlayed": 2,
+      "wins": 1,
       "losses": 1,
       "truthCompleted": 1,
       "daresCompleted": 0,
-      "winPercentage": 0,
-      "xp": 25,
+      "winPercentage": 50,
+      "xp": 50,
       "level": 1,
       "currentTitle": "Rookie",
-      "activeStreak": 0,
+      "activeStreak": 1,
       "friends": [],
       "matchHistory": [
+        {
+          "matchId": "room-match-1782886914743-5tc3u",
+          "opponentId": "TRUTH-2702",
+          "opponentName": "Player-2702",
+          "date": "7/1/2026",
+          "result": "win",
+          "rounds": 1
+        },
         {
           "matchId": "room-match-1782885502498-vcbzg",
           "opponentId": "TRUTH-2702",
@@ -1173,25 +1181,35 @@
           "rounds": 1
         }
       ],
-      "achievements": [],
+      "achievements": [
+        "First Win"
+      ],
       "rank": "🥉 Bronze"
     },
     "TRUTH-2702": {
       "id": "TRUTH-2702",
       "username": "Player-2702",
       "avatar": "🦉",
-      "gamesPlayed": 1,
+      "gamesPlayed": 2,
       "wins": 1,
-      "losses": 0,
+      "losses": 1,
       "truthCompleted": 0,
-      "daresCompleted": 0,
-      "winPercentage": 100,
-      "xp": 25,
+      "daresCompleted": 1,
+      "winPercentage": 50,
+      "xp": 50,
       "level": 1,
       "currentTitle": "Rookie",
-      "activeStreak": 1,
+      "activeStreak": 0,
       "friends": [],
       "matchHistory": [
+        {
+          "matchId": "room-match-1782886914743-5tc3u",
+          "opponentId": "TRUTH-1077",
+          "opponentName": "Player-1077",
+          "date": "7/1/2026",
+          "result": "loss",
+          "rounds": 1
+        },
         {
           "matchId": "room-match-1782885502498-vcbzg",
           "opponentId": "TRUTH-1077",
